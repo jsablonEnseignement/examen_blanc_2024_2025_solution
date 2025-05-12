@@ -1,7 +1,7 @@
 import * as UsersService from "../services/users.service";
 
-export const getUsers = (req: any, res: any) => {
-  const users = UsersService.getUsers();
+export const getUsersinitials = (req: any, res: any) => {
+  const users = UsersService.getUsersinitials();
   return res.status(200).json(users);
 };
 

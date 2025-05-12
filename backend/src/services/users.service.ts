@@ -1,7 +1,7 @@
 import { users } from "../mocks/users.mock";
 
-const getUsers = () => {
-  return users.map((user) => user.name).sort();
+const getUsersinitials = () => {
+  return users.map((user) => user.name[0] + user.firstname[0]);
 };
 
 const getUsersAdmin = () => {
@@ -9,6 +9,6 @@ const getUsersAdmin = () => {
 };
 
 export {
-  getUsers,
+  getUsersinitials,
   getUsersAdmin
 };
