@@ -22,13 +22,14 @@ export const Saisie = () => {
 
     return (
         <>
-            <input type="text" defaultValue={saisie} onChange={(e) => setSaisie(e.target.value)}/>
+            <input type="text" value={saisie} onChange={(e) => setSaisie(e.target.value)}/>
+            <button onClick={() => setSaisie("")} disabled={saisie.length === 0}>Effacer la saisie</button>
             <br />
             {
                 majuscules ? 
-                <button onClick={enMinuscules}>Passer en minuscules</button>
+                <button onClick={enMinuscules} disabled={saisie.length === 0}>Passer en minuscules</button>
                 :
-                <button onClick={enMajuscules}>Passer en majuscules</button> 
+                <button onClick={enMajuscules} disabled={saisie.length === 0}>Passer en majuscules</button> 
             }
             {saisie.length === 0 ? "Aucun texte saisi" : <Pair saisie={saisie} />}
         </>
