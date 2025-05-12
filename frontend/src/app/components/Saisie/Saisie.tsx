@@ -3,17 +3,21 @@ import { Nombres } from "../Nombres/Nombres";
 
 export const Saisie = () => {
 
-    const [saisie, setSaisie] = useState<number>();
+    const [saisie, setSaisie] = useState<string>("");
     const [nombres, setNombres] = useState<number[]>([]);
 
     const ajouterNombre = () => {
-        if(saisie) setNombres([...nombres, saisie]);
+        if(saisie) setNombres([...nombres, parseInt(saisie)]);
+    }
+
+    const estUnNombre = (value: string) => {
+        return value.match(/^[0-9]+$/) ? false : true
     }
 
     return (
         <>
-            <input type="text" defaultValue={saisie} onChange={(e: any) => setSaisie(parseInt(e.target.value))}/>
-            <button onClick={ajouterNombre}>Valider</button>
+            <input type="text" defaultValue={saisie} onChange={(e: any) => setSaisie(e.target.value)}/>
+            <button onClick={ajouterNombre} disabled={estUnNombre(saisie)}>Ajouter</button>
             <br />
             <Nombres nombres={nombres} />
         </>
