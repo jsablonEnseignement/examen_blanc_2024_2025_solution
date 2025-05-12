@@ -6,7 +6,7 @@ export const getUsers = (req: any, res: any) => {
 };
 
 export const getUserByName = (req: any, res: any) => {
-  const { name } = req.param;
+  const { name } = req.params;
   const user = UsersService.getUserByName(name);
   return res.status(200).json(user);
 };
