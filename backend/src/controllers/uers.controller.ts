@@ -5,7 +5,8 @@ export const getUsers = (req: any, res: any) => {
   return res.status(200).json(users);
 };
 
-export const getUsersAdmin = (req: any, res: any) => {
-  const admins = UsersService.getUsersAdmin();
-  return res.status(200).json(admins);
+export const getUserByName = (req: any, res: any) => {
+  const { name } = req.param;
+  const user = UsersService.getUserByName(name);
+  return res.status(200).json(user);
 };

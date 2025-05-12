@@ -1,13 +1,13 @@
 import express from "express";
 import {
   getUsers,
-  getUsersAdmin
+  getUserByName
 } from "../controllers/uers.controller";
 
 const router = express.Router();
 
 router.get("/", getUsers);
 
-router.get("/admins", getUsersAdmin);
+router.get("/:name", getUserByName);
 
 export { router };

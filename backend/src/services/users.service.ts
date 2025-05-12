@@ -4,11 +4,11 @@ const getUsers = () => {
   return users.map((user) => user.name).sort();
 };
 
-const getUsersAdmin = () => {
-  return users.filter((user) => user.role === "administrateur");
+const getUserByName = (name: string) => {
+  return users.find((user) => user.name === name);
 };
 
 export {
   getUsers,
-  getUsersAdmin
+  getUserByName
 };
