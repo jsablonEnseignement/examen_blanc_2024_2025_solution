@@ -16,10 +16,12 @@ export const Saisie = () => {
 
     return (
         <>
+            Saisir un nombre : 
+            <br />
             <input type="text" defaultValue={saisie} onChange={(e: any) => setSaisie(e.target.value)}/>
             <button onClick={ajouterNombre} disabled={estUnNombre(saisie)}>Ajouter</button>
             <br />
-            <Nombres nombres={nombres} />
+            { nombres.length > 0 && <Nombres nombres={nombres} />}
         </>
     )
 }
